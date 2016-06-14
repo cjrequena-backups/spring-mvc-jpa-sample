@@ -1,0 +1,30 @@
+ <!--?xml version="1.0" encoding="UTF-8"? -->  
+ <!DOCTYPE tiles-definitions PUBLIC  
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+
+	<!-- <definition name="dataAccessFailure" extends="main-layout"> -->
+	<!-- <put-attribute name="body" value="/views/exceptions/dataAccessFailure.jsp" 
+		/> -->
+	<!-- </definition> -->
+	<!-- <definition name="resourceNotFound" extends="main-layout"> -->
+	<!-- <put-attribute name="body" value="/views/exceptions/resourceNotFound.jsp" 
+		/> -->
+	<!-- </definition> -->
+	<!-- <definition name="uncaughtException" extends="main-layout"> -->
+	<!-- <put-attribute name="body" value="/views/exceptions/uncaughtException.jsp" 
+		/> -->
+	<!-- </definition> -->
+
+	<definition name="dataAccessFailure" template="/views/exceptions/dataAccessFailure.jsp">
+	</definition>
+	<definition name="uncaughtException" template="/views/exceptions/uncaughtException.jsp">
+	</definition>
+	<definition name="resourceNotFound" template="/views/exceptions/resourceNotFound.jsp">
+	</definition>
+	
+
+</tiles-definitions>

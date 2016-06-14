@@ -1,2 +1,2 @@
-# spring-mvc-jpa-sample
-Sample spring-mvc spring-data-jpa
+# spring-samples
+Spring Samples

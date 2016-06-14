@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Class-Path: antlr-2.7.7.jar aopalliance-1.0.jar aspectjrt-1.8.1.jar as
+ pectjweaver-1.8.1.jar classmate-1.1.0.jar commons-beanutils-1.8.0.jar
+  commons-collections-3.2.1.jar commons-digester-2.0.jar commons-fileu
+ pload-1.2.2.jar commons-lang3-3.3.2.jar dom4j-1.6.1.jar hibernate-com
+ mons-annotations-5.0.1.Final.jar hibernate-core-5.0.6.Final.jar hiber
+ nate-entitymanager-5.0.6.Final.jar hibernate-jpa-2.1-api-1.0.0.Final.
+ jar hibernate-validator-5.2.2.Final.jar HikariCP-2.4.3.jar jandex-2.0
+ .0.Final.jar javassist-3.18.1-GA.jar javax.inject-1.jar javax.servlet
+ -api-3.1.0.jar jboss-logging-3.3.0.Final.jar jcl-over-slf4j-1.7.13.ja
+ r jsp-api-2.0.jar jstl-1.2.jar jta-1.1.jar log4j-api-2.5.jar log4j-co
+ re-2.5.jar log4j-slf4j-impl-2.5.jar lombok-1.16.6.jar mysql-connector
+ -java-5.1.18.jar servlet-api-2.4.jar slf4j-api-1.7.12.jar spring-aop-
+ 4.2.3.RELEASE.jar spring-aspects-4.2.3.RELEASE.jar spring-beans-4.2.3
+ .RELEASE.jar spring-context-4.2.3.RELEASE.jar spring-context-support-
+ 4.2.3.RELEASE.jar spring-core-4.2.3.RELEASE.jar spring-data-commons-1
+ .11.1.RELEASE.jar spring-data-jpa-1.9.1.RELEASE.jar spring-expression
+ -4.2.3.RELEASE.jar spring-jdbc-4.2.3.RELEASE.jar spring-orm-4.2.3.REL
+ EASE.jar spring-security-acl-3.1.0.RELEASE.jar spring-security-aspect
+ s-3.1.0.RELEASE.jar spring-security-config-3.1.0.RELEASE.jar spring-s
+ ecurity-core-3.1.0.RELEASE.jar spring-security-crypto-3.1.0.RELEASE.j
+ ar spring-security-taglibs-3.1.0.RELEASE.jar spring-security-web-3.1.
+ 0.RELEASE.jar spring-tx-4.2.3.RELEASE.jar spring-web-4.2.3.RELEASE.ja
+ r spring-webmvc-4.2.3.RELEASE.jar tiles-api-3.0.5.jar tiles-autotag-c
+ ore-runtime-1.1.0.jar tiles-core-3.0.5.jar tiles-jsp-3.0.5.jar tiles-
+ request-api-1.0.6.jar tiles-request-jsp-1.0.6.jar tiles-request-servl
+ et-1.0.6.jar tiles-servlet-3.0.5.jar tiles-template-3.0.5.jar validat
+ ion-api-1.1.0.Final.jar xml-apis-1.0.b2.jar
+
