@@ -1,10 +1,10 @@
-package com.sample.business.service;
+package com.sample.service;
 
 import java.util.List;
 
-import com.sample.db.entity.EmployeeEntity;
+import com.sample.db.entity.InvoicelineEntity;
 
-public interface IEmployeeService {
+public interface IInvoicelineService {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -17,21 +17,21 @@ public interface IEmployeeService {
 	 * 
 	 * @generated
 	 **/
-	public abstract void save(EmployeeEntity object) throws Exception;
+	public abstract void save(InvoicelineEntity object) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract void update(EmployeeEntity obj) throws Exception;
+	public abstract void update(InvoicelineEntity obj) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract void delete(EmployeeEntity obj) throws Exception;
+	public abstract void delete(InvoicelineEntity obj) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -45,26 +45,26 @@ public interface IEmployeeService {
 	 * 
 	 * @generated
 	 **/
-	public abstract EmployeeEntity findByPk(Integer pk) throws Exception;
+	public abstract InvoicelineEntity findByPk(Integer pk) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public List<EmployeeEntity> findEntries(int firstResult, int maxResults) throws Exception;
+	public List<InvoicelineEntity> findEntries(int firstResult, int maxResults) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract List<EmployeeEntity> findAll() throws Exception;
+	public abstract List<InvoicelineEntity> findAll() throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	//public List<EmployeeEntity> executeQueryFilter(List<Filter> filters, int firstResult, int maxResult) throws Exception;
+	//public List<InvoicelineEntity> executeQueryFilter(List<Filter> filters, int firstResult, int maxResult) throws Exception;
 }

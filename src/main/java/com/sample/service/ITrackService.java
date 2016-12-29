@@ -1,10 +1,10 @@
-package com.sample.business.service;
+package com.sample.service;
 
 import java.util.List;
 
-import com.sample.db.entity.PlaylistEntity;
+import com.sample.db.entity.TrackEntity;
 
-public interface IPlaylistService {
+public interface ITrackService {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -17,21 +17,21 @@ public interface IPlaylistService {
 	 * 
 	 * @generated
 	 **/
-	public abstract void save(PlaylistEntity object) throws Exception;
+	public abstract void save(TrackEntity object) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract void update(PlaylistEntity obj) throws Exception;
+	public abstract void update(TrackEntity obj) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract void delete(PlaylistEntity obj) throws Exception;
+	public abstract void delete(TrackEntity obj) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -45,26 +45,26 @@ public interface IPlaylistService {
 	 * 
 	 * @generated
 	 **/
-	public abstract PlaylistEntity findByPk(Integer pk) throws Exception;
+	public abstract TrackEntity findByPk(Integer pk) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public List<PlaylistEntity> findEntries(int firstResult, int maxResults) throws Exception;
+	public List<TrackEntity> findEntries(int firstResult, int maxResults) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract List<PlaylistEntity> findAll() throws Exception;
+	public abstract List<TrackEntity> findAll() throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	//public List<PlaylistEntity> executeQueryFilter(List<Filter> filters, int firstResult, int maxResult) throws Exception;
+	//public List<TrackEntity> executeQueryFilter(List<Filter> filters, int firstResult, int maxResult) throws Exception;
 }

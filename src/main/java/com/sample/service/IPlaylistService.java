@@ -1,10 +1,10 @@
-package com.sample.business.service;
+package com.sample.service;
 
 import java.util.List;
 
-import com.sample.db.entity.CustomerEntity;
+import com.sample.db.entity.PlaylistEntity;
 
-public interface ICustomerService {
+public interface IPlaylistService {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -17,21 +17,21 @@ public interface ICustomerService {
 	 * 
 	 * @generated
 	 **/
-	public abstract void save(CustomerEntity object) throws Exception;
+	public abstract void save(PlaylistEntity object) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract void update(CustomerEntity obj) throws Exception;
+	public abstract void update(PlaylistEntity obj) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract void delete(CustomerEntity obj) throws Exception;
+	public abstract void delete(PlaylistEntity obj) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -45,26 +45,26 @@ public interface ICustomerService {
 	 * 
 	 * @generated
 	 **/
-	public abstract CustomerEntity findByPk(Integer pk) throws Exception;
+	public abstract PlaylistEntity findByPk(Integer pk) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public List<CustomerEntity> findEntries(int firstResult, int maxResults) throws Exception;
+	public List<PlaylistEntity> findEntries(int firstResult, int maxResults) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract List<CustomerEntity> findAll() throws Exception;
+	public abstract List<PlaylistEntity> findAll() throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	//public List<CustomerEntity> executeQueryFilter(List<Filter> filters, int firstResult, int maxResult) throws Exception;
+	//public List<PlaylistEntity> executeQueryFilter(List<Filter> filters, int firstResult, int maxResult) throws Exception;
 }

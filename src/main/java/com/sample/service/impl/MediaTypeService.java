@@ -3,15 +3,15 @@ package com.sample.service.impl;
 import java.io.Serializable;
 import java.util.List;
 
+import com.sample.service.IMediatypeService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sample.business.service.IEmployeeService;
-import com.sample.db.entity.EmployeeEntity;
+import com.sample.db.entity.MediatypeEntity;
 
 @Service
 @Transactional
-public class EmployeeService implements IEmployeeService, Serializable {
+public class MediaTypeService implements IMediatypeService, Serializable {
 
 	/**
 	 * 
@@ -25,19 +25,19 @@ public class EmployeeService implements IEmployeeService, Serializable {
 	}
 
 	@Override
-	public void save(EmployeeEntity object) throws Exception {
+	public void save(MediatypeEntity object) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void update(EmployeeEntity obj) throws Exception {
+	public void update(MediatypeEntity obj) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(EmployeeEntity obj) throws Exception {
+	public void delete(MediatypeEntity obj) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
@@ -49,21 +49,22 @@ public class EmployeeService implements IEmployeeService, Serializable {
 	}
 
 	@Override
-	public EmployeeEntity findByPk(Integer pk) throws Exception {
+	public MediatypeEntity findByPk(Integer pk) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<EmployeeEntity> findEntries(int firstResult, int maxResults) throws Exception {
+	public List<MediatypeEntity> findEntries(int firstResult, int maxResults) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<EmployeeEntity> findAll() throws Exception {
+	public List<MediatypeEntity> findAll() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	
 }

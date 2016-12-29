@@ -1,10 +1,10 @@
-package com.sample.business.service;
+package com.sample.service;
 
 import java.util.List;
 
-import com.sample.db.entity.TrackEntity;
+import com.sample.db.entity.CustomerEntity;
 
-public interface ITrackService {
+public interface ICustomerService {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -17,21 +17,21 @@ public interface ITrackService {
 	 * 
 	 * @generated
 	 **/
-	public abstract void save(TrackEntity object) throws Exception;
+	public abstract void save(CustomerEntity object) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract void update(TrackEntity obj) throws Exception;
+	public abstract void update(CustomerEntity obj) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract void delete(TrackEntity obj) throws Exception;
+	public abstract void delete(CustomerEntity obj) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -45,26 +45,26 @@ public interface ITrackService {
 	 * 
 	 * @generated
 	 **/
-	public abstract TrackEntity findByPk(Integer pk) throws Exception;
+	public abstract CustomerEntity findByPk(Integer pk) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public List<TrackEntity> findEntries(int firstResult, int maxResults) throws Exception;
+	public List<CustomerEntity> findEntries(int firstResult, int maxResults) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract List<TrackEntity> findAll() throws Exception;
+	public abstract List<CustomerEntity> findAll() throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	//public List<TrackEntity> executeQueryFilter(List<Filter> filters, int firstResult, int maxResult) throws Exception;
+	//public List<CustomerEntity> executeQueryFilter(List<Filter> filters, int firstResult, int maxResult) throws Exception;
 }

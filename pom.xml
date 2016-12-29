@@ -47,6 +47,7 @@
         <org.springframework.security.version>3.1.0.RELEASE</org.springframework.security.version>
         <spring-data-jpa.version>1.9.1.RELEASE</spring-data-jpa.version>
         <org.aspectj.version>1.8.1</org.aspectj.version>
+
         <!-- Database -->
         <postgresql.version>9.3-1100-jdbc41</postgresql.version>
         <mysql-connector-java.version>5.1.35</mysql-connector-java.version>
@@ -54,64 +55,24 @@
         <HikariCP.version>2.4.3</HikariCP.version>
         <org.hibernate.version>5.0.6.Final</org.hibernate.version>
         <org.hibernate.javax.persistence.version>1.0.0.Final</org.hibernate.javax.persistence.version>
+
         <!-- Logging-->
         <log4j2.version>2.5</log4j2.version>
+
         <!-- Boilerplate -->
         <lombok.version>1.16.6</lombok.version>
         <orika-core.version>1.4.6</orika-core.version>
+
+        <org.mapstruct.version>1.1.0.Final</org.mapstruct.version>
+
+
         <!-- Testing and covering -->
         <junit.version>4.12</junit.version>
         <jmockit.version>1.19</jmockit.version>
-        <podam.version>6.0.2.RELEASE</podam.version>
-        <dbunit.version>2.4.9</dbunit.version>
-        <!--
-        ================
-        CI Configutation
-        ================
-        -->
-        <!-- Jacoco output directory | For multimodule projects change this property on parent project with <jacoco.outputDir>${project.basedir}/../target</jacoco.outputDir>-->
-        <jacoco.outputDir>${project.build.directory}/coverage-reports</jacoco.outputDir>
-        <jacoco.it.execution.data.file>${jacoco.outputDir}/jacoco-it.exec</jacoco.it.execution.data.file>
-        <jacoco.ut.execution.data.file>${jacoco.outputDir}/jacoco-ut.exec</jacoco.ut.execution.data.file>
-        <sonar.jacoco.reportPath>${jacoco.ut.execution.data.file}</sonar.jacoco.reportPath>
-        <sonar.jacoco.itReportPath>${jacoco.it.execution.data.file}</sonar.jacoco.itReportPath>
-        <sonar.surefire.reportsPath>${project.build.directory}/surefire-reports</sonar.surefire.reportsPath>
-        <sonar.binaries>${project.build.directory}/classes</sonar.binaries>
-        <sonar.analysis.mode>publish</sonar.analysis.mode>
-        <sonar.host.url>http://localhost:9000</sonar.host.url>
-        <skip.integration.tests>true</skip.integration.tests>
-        <skip.unit.tests>false</skip.unit.tests>
-        <!-- -->
-        <releases.repo.url></releases.repo.url>
-        <snapshots.repo.url></snapshots.repo.url>
+
     </properties>
-    <profiles>
-        <profile>
-            <id>all-test</id>
-            <properties>
-                <!-- All tests are run. -->
-                <skip.integration.tests>false</skip.integration.tests>
-                <skip.unit.tests>false</skip.unit.tests>
-            </properties>
-        </profile>
-        <profile>
-            <id>integration-test</id>
-            <properties>
-                <!-- Only integration tests are run. -->
-                <skip.integration.tests>false</skip.integration.tests>
-                <skip.unit.tests>true</skip.unit.tests>
-            </properties>
-        </profile>
-        <profile>
-            <id>unit-test</id>
-            <properties>
-                <!-- Only integration tests are run. -->
-                <skip.integration.tests>true</skip.integration.tests>
-                <skip.unit.tests>false</skip.unit.tests>
-            </properties>
-        </profile>
-    </profiles>
     <dependencies>
+        <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -190,7 +151,8 @@
             <artifactId>spring-security-taglibs</artifactId>
             <version>${org.springframework.security.version}</version>
         </dependency>
-        <!-- web -->
+
+        <!-- Web -->
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-jsp</artifactId>
@@ -216,7 +178,8 @@
         <!-- 			<artifactId>thymeleaf-spring4</artifactId> -->
         <!-- 			<version>2.1.4.RELEASE</version> -->
         <!-- 		</dependency> -->
-        <!-- database -->
+
+        <!-- Database -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -270,7 +233,7 @@
             <artifactId>javax.inject</artifactId>
             <version>1</version>
         </dependency>
-        <!-- aspectj -->
+        <!-- Aspectj -->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
@@ -304,7 +267,7 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
-        <!-- -->
+        <!-- Logging -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
@@ -319,6 +282,18 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
             <version>2.5</version>
+        </dependency>
+        <!-- -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-jdk8</artifactId>
+            <version>${org.mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${org.mapstruct.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <build>
@@ -335,6 +310,10 @@
                         <showWarnings>true</showWarnings>
                         <showDeprecation>true</showDeprecation>
                         <encoding>${project.build.sourceEncoding}</encoding>
+                        <!--<annotationProcessors>-->
+                        <!--<annotationProcessor>org.mapstruct.ap.MappingProcessor</annotationProcessor>-->
+                        <!--</annotationProcessors>-->
+                        <proc>none</proc> <!-- disable annotation processing to avoid duplicating maven-processor-plugin output -->
                     </configuration>
                 </plugin>
                 <plugin>
@@ -360,163 +339,8 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>${maven-deploy-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>${maven-jar-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>buildnumber-maven-plugin</artifactId>
-                    <version>${buildnumber-maven-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <phase>validate</phase>
-                            <goals>
-                                <goal>create</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <!--
-                          doCheck and doUpdate actually talk to repository if it's true,
-                          Check would check that there are no local changes.
-                          Update would update it
-                         -->
-                        <doCheck>false</doCheck>
-                        <doUpdate>false</doUpdate>
-                        <!--
-                          This ensures that even if we are not connected to scm than also
-                          take the version from local .svn file
-                         -->
-                        <revisionOnScmFailure>true</revisionOnScmFailure>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>sonar-maven-plugin</artifactId>
-                    <version>${sonar-maven-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.jacoco</groupId>
-                    <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>${jacoco-maven-plugin.version}</version>
-                    <executions>
-                        <!-- Prepares the property pointing to the JaCoCo runtime agent which
-                            is passed as VM argument when Maven the Surefire plugin is executed. -->
-                        <execution>
-                            <id>pre-unit-test</id>
-                            <goals>
-                                <goal>prepare-agent</goal>
-                            </goals>
-                            <configuration>
-                                <!-- Sets the path to the file which contains the execution data. -->
-                                <destFile>${jacoco.ut.execution.data.file}</destFile>
-                                <!-- Sets the name of the property containing the settings for JaCoCo
-                                    runtime agent. -->
-                                <propertyName>surefireArgLine</propertyName>
-                            </configuration>
-                        </execution>
-                        <!-- Ensures that the code coverage report for unit tests is created
-                            after unit tests have been run. -->
-                        <execution>
-                            <id>post-unit-test</id>
-                            <phase>test</phase>
-                            <goals>
-                                <goal>report</goal>
-                            </goals>
-                            <configuration>
-                                <!-- Sets the path to the file which contains the execution data. -->
-                                <dataFile>${jacoco.ut.execution.data.file}</dataFile>
-                                <!-- Sets the output directory for the code coverage report. -->
-                                <outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</outputDirectory>
-                            </configuration>
-                        </execution>
-                        <!-- Prepares the property pointing to the JaCoCo runtime agent which
-                            is passed as VM argument when Maven the Failsafe plugin is executed. -->
-                        <execution>
-                            <id>pre-integration-test</id>
-                            <phase>pre-integration-test</phase>
-                            <goals>
-                                <goal>prepare-agent</goal>
-                            </goals>
-                            <configuration>
-                                <!-- Sets the path to the file which contains the execution data. -->
-                                <destFile>${jacoco.it.execution.data.file}</destFile>
-                                <!-- Sets the name of the property containing the settings for JaCoCo
-                                    runtime agent. -->
-                                <propertyName>failsafeArgLine</propertyName>
-                            </configuration>
-                        </execution>
-                        <!-- Ensures that the code coverage report for integration tests after
-                            integration tests have been run. -->
-                        <execution>
-                            <id>post-integration-test</id>
-                            <phase>post-integration-test</phase>
-                            <goals>
-                                <goal>report</goal>
-                            </goals>
-                            <configuration>
-                                <!-- Sets the path to the file which contains the execution data. -->
-                                <dataFile>${jacoco.it.execution.data.file}</dataFile>
-                                <!-- Sets the output directory for the code coverage report. -->
-                                <outputDirectory>${project.reporting.outputDirectory}/jacoco-it</outputDirectory>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-                <!-- Used for unit tests -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${maven-surefire-plugin.version}</version>
-                    <configuration>
-                        <!-- Sets the VM argument line used when unit tests are run. -->
-                        <argLine>${surefireArgLine} -Dfile.encoding=UTF-8</argLine>
-                        <!-- Skips unit tests if the value of skip.unit.tests property is true -->
-                        <skipTests>${skip.unit.tests}</skipTests>
-                        <!-- Excludes integration tests when unit tests are run. -->
-                        <excludes>
-                            <exclude>**/IT*.java</exclude>
-                        </excludes>
-                    </configuration>
-                </plugin>
-                <!-- Used for integration tests -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>${maven-failsafe-plugin.version}</version>
-                    <executions>
-                        <!-- Ensures that both integration-test and verify goals of the Failsafe
-                            Maven plugin are executed. -->
-                        <execution>
-                            <id>integration-tests</id>
-                            <goals>
-                                <goal>integration-test</goal>
-                                <goal>verify</goal>
-                            </goals>
-                            <configuration>
-                                <!-- Sets the VM argument line used when integration tests are run. -->
-                                <argLine>${failsafeArgLine} -Dfile.encoding=UTF-8</argLine>
-                                <!-- Skips integration tests if the value of skip.integration.tests
-                                    property is true -->
-                                <skipTests>${skip.integration.tests}</skipTests>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven-javadoc-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>${maven-site-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -550,6 +374,35 @@
                         <downloadJavadocs>false</downloadJavadocs>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.bsc.maven</groupId>
+                    <artifactId>maven-processor-plugin</artifactId>
+                    <version>2.2.4</version>
+                    <configuration>
+                        <defaultOutputDirectory>
+                            ${project.build.directory}/generated-sources
+                        </defaultOutputDirectory>
+                        <processors>
+                            <processor>org.mapstruct.ap.MappingProcessor</processor>
+                        </processors>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>process</id>
+                            <phase>generate-sources</phase>
+                            <goals>
+                                <goal>process</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${org.mapstruct.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -571,42 +424,7 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>buildnumber-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-            </plugin>
-            <!-- Used for unit tests -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-            </plugin>
-            <!-- Used for integration tests -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${maven-javadoc-plugin.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -620,6 +438,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.bsc.maven</groupId>
+                <artifactId>maven-processor-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.bsc.maven</groupId>
+                <artifactId>maven-processor-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

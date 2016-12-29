@@ -1,4 +1,4 @@
-package com.sample.business.service.impl;
+package com.sample.service.impl;
 
 import java.io.Serializable;
 import java.util.List;
@@ -6,12 +6,12 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sample.business.service.IPlaylistService;
-import com.sample.db.entity.PlaylistEntity;
+import com.sample.service.IEmployeeService;
+import com.sample.db.entity.EmployeeEntity;
 
 @Service
 @Transactional
-public class PlaylistService implements IPlaylistService, Serializable {
+public class EmployeeService implements IEmployeeService, Serializable {
 
 	/**
 	 * 
@@ -25,19 +25,19 @@ public class PlaylistService implements IPlaylistService, Serializable {
 	}
 
 	@Override
-	public void save(PlaylistEntity object) throws Exception {
+	public void save(EmployeeEntity object) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void update(PlaylistEntity obj) throws Exception {
+	public void update(EmployeeEntity obj) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(PlaylistEntity obj) throws Exception {
+	public void delete(EmployeeEntity obj) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
@@ -49,22 +49,21 @@ public class PlaylistService implements IPlaylistService, Serializable {
 	}
 
 	@Override
-	public PlaylistEntity findByPk(Integer pk) throws Exception {
+	public EmployeeEntity findByPk(Integer pk) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<PlaylistEntity> findEntries(int firstResult, int maxResults) throws Exception {
+	public List<EmployeeEntity> findEntries(int firstResult, int maxResults) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<PlaylistEntity> findAll() throws Exception {
+	public List<EmployeeEntity> findAll() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	
 }

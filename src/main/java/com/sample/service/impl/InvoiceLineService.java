@@ -1,12 +1,12 @@
-package com.sample.business.service.impl;
+package com.sample.service.impl;
 
 import java.io.Serializable;
 import java.util.List;
 
+import com.sample.service.IInvoicelineService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sample.business.service.IInvoicelineService;
 import com.sample.db.entity.InvoicelineEntity;
 
 @Service

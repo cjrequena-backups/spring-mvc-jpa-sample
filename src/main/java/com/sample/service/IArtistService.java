@@ -1,10 +1,10 @@
-package com.sample.business.service;
+package com.sample.service;
 
 import java.util.List;
 
-import com.sample.db.entity.MediatypeEntity;
+import com.sample.db.entity.ArtistEntity;
 
-public interface IMediatypeService {
+public interface IArtistService {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -17,21 +17,21 @@ public interface IMediatypeService {
 	 * 
 	 * @generated
 	 **/
-	public abstract void save(MediatypeEntity object) throws Exception;
+	public abstract void save(ArtistEntity object) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract void update(MediatypeEntity obj) throws Exception;
+	public abstract void update(ArtistEntity obj) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract void delete(MediatypeEntity obj) throws Exception;
+	public abstract void delete(ArtistEntity obj) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -45,26 +45,26 @@ public interface IMediatypeService {
 	 * 
 	 * @generated
 	 **/
-	public abstract MediatypeEntity findByPk(Integer pk) throws Exception;
+	public abstract ArtistEntity findByPk(Integer pk) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public List<MediatypeEntity> findEntries(int firstResult, int maxResults) throws Exception;
+	public List<ArtistEntity> findEntries(int firstResult, int maxResults) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract List<MediatypeEntity> findAll() throws Exception;
+	public abstract List<ArtistEntity> findAll() throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	//public List<MediatypeEntity> executeQueryFilter(List<Filter> filters, int firstResult, int maxResult) throws Exception;
+	// public List<ArtistEntity> executeQueryFilter(List<Filter> filters, int firstResult, int maxResult) throws Exception;
 }

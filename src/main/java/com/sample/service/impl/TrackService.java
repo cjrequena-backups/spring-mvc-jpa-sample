@@ -1,17 +1,17 @@
-package com.sample.business.service.impl;
+package com.sample.service.impl;
 
 import java.io.Serializable;
 import java.util.List;
 
+import com.sample.service.ITrackService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sample.business.service.IInvoiceService;
-import com.sample.db.entity.InvoiceEntity;
+import com.sample.db.entity.TrackEntity;
 
 @Service
 @Transactional
-public class InvoiceService implements IInvoiceService, Serializable {
+public class TrackService implements ITrackService, Serializable {
 
 	/**
 	 * 
@@ -25,19 +25,19 @@ public class InvoiceService implements IInvoiceService, Serializable {
 	}
 
 	@Override
-	public void save(InvoiceEntity object) throws Exception {
+	public void save(TrackEntity object) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void update(InvoiceEntity obj) throws Exception {
+	public void update(TrackEntity obj) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(InvoiceEntity obj) throws Exception {
+	public void delete(TrackEntity obj) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
@@ -49,22 +49,22 @@ public class InvoiceService implements IInvoiceService, Serializable {
 	}
 
 	@Override
-	public InvoiceEntity findByPk(Integer pk) throws Exception {
+	public TrackEntity findByPk(Integer pk) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<InvoiceEntity> findEntries(int firstResult, int maxResults) throws Exception {
+	public List<TrackEntity> findEntries(int firstResult, int maxResults) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<InvoiceEntity> findAll() throws Exception {
+	public List<TrackEntity> findAll() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	
+
 }

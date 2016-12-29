@@ -1,40 +1,43 @@
-####################
-# Java class files
-####################
-*.class
-
-####################
-# Package Files
-####################
-*.jar
-*.war
-*.ear
-*.db
-
-####################
-# Thumbnails
-####################
-._*
-
-####################
+###############
 # Directories
-####################
+###############
 bin/
 gen/
 target/
 .sonar/
 
-####################
-# OS generated files
-####################
-.DS_Store
-ehthumbs.db
-Icon?
+###############
+# Java class files
+###############
+*.class
+
+###############
+# Package Files
+###############
+*.jar
+*.war
+*.ear
+*.db
+
+###############
+# Windows image file caches
+###############
 Thumbs.db
 
-####################
+
+###############
+# Thumbnails
+###############
+._*
+
+###############
+# OS Files
+###############
+.DS_Store
+
+######################
 # Eclipse
-####################
+######################
 *.pydevproject
 .metadata
 .project
@@ -53,9 +56,9 @@ local.properties
 # External tool builders
 .externalToolBuilders/
 
-####################
+######################
 # IntelliJ Idea
-####################
+######################
 idea/
 /out/
 build/

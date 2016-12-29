@@ -1,10 +1,10 @@
-package com.sample.business.service;
+package com.sample.service;
 
 import java.util.List;
 
-import com.sample.db.entity.InvoicelineEntity;
+import com.sample.db.entity.GenreEntity;
 
-public interface IInvoicelineService {
+public interface IGenreService {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -17,21 +17,21 @@ public interface IInvoicelineService {
 	 * 
 	 * @generated
 	 **/
-	public abstract void save(InvoicelineEntity object) throws Exception;
+	public abstract void save(GenreEntity object) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract void update(InvoicelineEntity obj) throws Exception;
+	public abstract void update(GenreEntity obj) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract void delete(InvoicelineEntity obj) throws Exception;
+	public abstract void delete(GenreEntity obj) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -45,26 +45,26 @@ public interface IInvoicelineService {
 	 * 
 	 * @generated
 	 **/
-	public abstract InvoicelineEntity findByPk(Integer pk) throws Exception;
+	public abstract GenreEntity findByPk(Integer pk) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public List<InvoicelineEntity> findEntries(int firstResult, int maxResults) throws Exception;
+	public List<GenreEntity> findEntries(int firstResult, int maxResults) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	public abstract List<InvoicelineEntity> findAll() throws Exception;
+	public abstract List<GenreEntity> findAll() throws Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 **/
-	//public List<InvoicelineEntity> executeQueryFilter(List<Filter> filters, int firstResult, int maxResult) throws Exception;
+	//public List<GenreEntity> executeQueryFilter(List<Filter> filters, int firstResult, int maxResult) throws Exception;
 }

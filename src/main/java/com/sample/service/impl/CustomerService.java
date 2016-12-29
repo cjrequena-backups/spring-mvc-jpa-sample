@@ -3,15 +3,15 @@ package com.sample.service.impl;
 import java.io.Serializable;
 import java.util.List;
 
+import com.sample.service.ICustomerService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sample.business.service.IArtistService;
-import com.sample.db.entity.ArtistEntity;
+import com.sample.db.entity.CustomerEntity;
 
 @Service
 @Transactional
-public class ArtistService implements IArtistService, Serializable {
+public class CustomerService implements ICustomerService, Serializable {
 
 	/**
 	 * 
@@ -25,19 +25,19 @@ public class ArtistService implements IArtistService, Serializable {
 	}
 
 	@Override
-	public void save(ArtistEntity object) throws Exception {
+	public void save(CustomerEntity object) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void update(ArtistEntity obj) throws Exception {
+	public void update(CustomerEntity obj) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(ArtistEntity obj) throws Exception {
+	public void delete(CustomerEntity obj) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
@@ -49,20 +49,22 @@ public class ArtistService implements IArtistService, Serializable {
 	}
 
 	@Override
-	public ArtistEntity findByPk(Integer pk) throws Exception {
+	public CustomerEntity findByPk(Integer pk) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<ArtistEntity> findEntries(int firstResult, int maxResults) throws Exception {
+	public List<CustomerEntity> findEntries(int firstResult, int maxResults) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<ArtistEntity> findAll() throws Exception {
+	public List<CustomerEntity> findAll() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 }
