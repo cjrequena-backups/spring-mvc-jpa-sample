@@ -6,8 +6,9 @@ import java.util.List;
 
 /**
  * The persistent class for the album database table.
- * 
+ *
  */
+
 @Entity
 @Table(name = "album")
 @NamedQuery(name = "AlbumEntity.findAll", query = "SELECT a FROM AlbumEntity a")

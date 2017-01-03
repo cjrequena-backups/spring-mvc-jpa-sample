@@ -1,32 +1,25 @@
 package com.sample.dto;
 
-import com.sample.db.entity.ArtistEntity;
-import com.sample.db.entity.TrackEntity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import java.io.Serializable;
-import java.util.List;
 
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class AlbumDTO implements Serializable {
 
     private int albumId;
 
     private String title;
 
-    private ArtistEntity artist;
-
-    private List<TrackEntity> tracks;
+    private ArtistDTO artist;
 
     public int getAlbumId() {
         return albumId;
@@ -44,19 +37,12 @@ public class AlbumDTO implements Serializable {
         this.title = title;
     }
 
-    public ArtistEntity getArtist() {
+    public ArtistDTO getArtist() {
         return artist;
     }
 
-    public void setArtist(ArtistEntity artist) {
+    public void setArtist(ArtistDTO artist) {
         this.artist = artist;
     }
 
-    public List<TrackEntity> getTracks() {
-        return tracks;
-    }
-
-    public void setTracks(List<TrackEntity> tracks) {
-        this.tracks = tracks;
-    }
 }
